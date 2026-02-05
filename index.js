@@ -9,7 +9,7 @@ for (let i = 0; i <= cols; i++ ) {
     col.style.height = "auto";            
     col.style.border = "1px solid black"; 
     col.style.display = "flex";
-    col.style.flexDirection = "column";  
+    col.style.flexDirection = "column";
 
     console.log(`added col number ${i}`);
     for (let j = 0; j <= rows; j++) {
@@ -18,8 +18,10 @@ for (let i = 0; i <= cols; i++ ) {
         row.style.height = "5vh";            
         row.style.border = "1px solid black"; 
         row.style.display = "flex";
-        row.style.flexDirection = "row"; 
+        row.style.flexDirection = "row";
+        row.classList.add("cell");
         col.appendChild(row);
+        
         console.log(`added row number ${j}`);
     }
     container.appendChild(col);

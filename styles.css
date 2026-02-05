@@ -4,3 +4,8 @@
     margin: 10px auto;
     justify-content: center;
 }
+
+.cell:hover{
+    background-color: black;
+
+}
