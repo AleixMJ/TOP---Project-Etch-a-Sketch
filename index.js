@@ -7,6 +7,8 @@ const container = document.getElementById("container");
 
 const newGrid = document.getElementById("gridCreation");
 
+const painted = document.getElementsByClassName("painted");
+
 
 newGrid.addEventListener("click", () => {
     gridSize = prompt("Enter grid Size (1-100):", "16");
@@ -42,7 +44,15 @@ function createGrid(gridSize) {
             row.style.height = `${90/gridSize}vh`;            
             row.style.display = "flex";
             row.style.flexDirection = "row";
-            row.addEventListener("mouseenter", () => {row.classList.add("painted")});
+            row.addEventListener("mouseenter", () => {
+                const r = random255();
+                const g = random255();
+                const b = random255();
+
+                row.style.backgroundColor = `rgb(${r} ${g} ${b})`
+            
+            });
+            
             col.appendChild(row);
             
             console.log(`added row number ${j}`);
@@ -50,4 +60,8 @@ function createGrid(gridSize) {
         container.appendChild(col);
         console.log('added row');
     }
+}
+
+function random255() {
+    return Math.floor(Math.random() * 256);
 }
