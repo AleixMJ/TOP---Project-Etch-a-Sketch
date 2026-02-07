@@ -27,9 +27,8 @@ newGrid.addEventListener("click", () => {
 createGrid(16);
 
 // Creates the Grid
-function createGrid(gridSize) {
+function createGrid(gridSize) {   
     
-
     for (let i = 0; i <= gridSize; i++ ) {        
         const col = document.createElement("div");
         col.style.width  = `${90/gridSize}vw`;             
@@ -37,28 +36,24 @@ function createGrid(gridSize) {
         col.style.display = "flex";
         col.style.flexDirection = "column";
 
-        console.log(`added col number ${i}`);
         for (let j = 0; j <= gridSize; j++) {
             const row = document.createElement("div");
             row.style.width  = "auto";             
             row.style.height = `${90/gridSize}vh`;            
             row.style.display = "flex";
             row.style.flexDirection = "row";
-            row.addEventListener("mouseenter", () => {
-                const r = random255();
-                const g = random255();
-                const b = random255();
-
-                row.style.backgroundColor = `rgb(${r} ${g} ${b})`
-            
+            const r = random255();
+            const g = random255();
+            const b = random255();    
+            let opacity = 0;
+            row.addEventListener("mouseenter", () => {               
+                row.style.backgroundColor = `rgb(${r} ${g} ${b} / ${opacity} )`;
+                opacity = Math.min (opacity + 0.1, 1);            
             });
-            
-            col.appendChild(row);
-            
-            console.log(`added row number ${j}`);
+
+            col.appendChild(row);           
         }
         container.appendChild(col);
-        console.log('added row');
     }
 }
 
