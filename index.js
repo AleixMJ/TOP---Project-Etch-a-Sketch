@@ -19,7 +19,7 @@ for (let i = 0; i <= cols; i++ ) {
         row.style.border = "1px solid black"; 
         row.style.display = "flex";
         row.style.flexDirection = "row";
-        row.classList.add("cell");
+        row.addEventListener("mouseenter", () => {row.classList.add("painted")});
         col.appendChild(row);
         
         console.log(`added row number ${j}`);
