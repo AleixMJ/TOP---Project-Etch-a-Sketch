@@ -3,6 +3,9 @@ https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 
 
 # Assignment
+
+PLEASE NOTE THIS ASSINGMENT IS FOR DESKTOP as we use mouse hovering which won't work on touch screens.
+
 Don’t forget to commit early and often! You can reference the Commit Messages lesson!
 
 Follow our instructions on setting up your project’s GitHub repository.
