@@ -10,8 +10,15 @@ const newGrid = document.getElementById("gridCreation");
 
 newGrid.addEventListener("click", () => {
     gridSize = prompt("Enter grid Size (1-100):", "16");
-    container.replaceChildren();
-    createGrid(gridSize);
+    if (gridSize > 1 || gridSize < 100) {
+        container.replaceChildren();
+        createGrid(gridSize);
+    }
+    else {
+        alert("Grid creation invalid. Grid needs to be between 1-100");
+        return null;
+    }
+
 
 })
 
